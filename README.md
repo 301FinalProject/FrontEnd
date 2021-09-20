@@ -59,3 +59,4 @@ Git Process
 * Create a branch for each feature and ACP often.
 
 * Yes, one person will need to look over each PR before it is accepted into the final project.
+
