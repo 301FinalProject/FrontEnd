@@ -30,7 +30,7 @@ code.
 
 Communication Plan
 
-* for just communication 9-8. For actually helping with things 9-11, and 12-6 with felxibility.
+* for just communication 9-8. For actually helping with things 9-11, and 12-6 with flexibility.
 
 * Slack, remo, maybe zoom, and in person.
 
