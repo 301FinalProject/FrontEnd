@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import LoginButton from './LoginButton';
 import { withAuth0 } from '@auth0/auth0-react';
