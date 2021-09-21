@@ -34,7 +34,7 @@ render() {
           color="#00BFFF"
           height={25}
           width={25}
-          timeout={3000} //3 secs
+          // timeout={3000} //3 secs
         />
           : auth0.isAuthenticated
            ? (
