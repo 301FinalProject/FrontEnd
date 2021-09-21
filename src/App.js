@@ -12,7 +12,21 @@ import {
 } from "react-router-dom";
 
 class App extends React.Component {
+  state = {
+    gamers: null
+  };
 
+componentDidUpdate() {
+  if (!this.state.gamers)
+  this.fetchGamers();
+}
+
+async fetchGamers() {
+  const { auth0 } = this.props;
+  if (!auth0.isAuthenticated) {
+    return;
+  }
+}
 
 
 render() {
