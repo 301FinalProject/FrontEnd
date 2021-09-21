@@ -3,26 +3,50 @@ import './App.css';
 import LoginButton from './LoginButton';
 import { withAuth0 } from '@auth0/auth0-react';
 import LogoutButton from './LogoutButton'
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
 
-function App() {
+class App extends React.Component {
+
+
+
+render() {
+  
+  const { auth0 } = this.props;
+  console.log('auth0 in App', auth0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <nav>
+          <h1>Game Hive</h1>
+          <Link to="/">Home</Link>
+          <Link to="/aboutUs">About Us</Link>
+          {auth0.isLoading
+          ? <p>spinner</p>
+          : auth0.isAuthenticated
+           ? (
+             <>
+              Welcome Back, {auth0.user.name}
+              <LogoutButton />
+             </>
+           )
+           : <LoginButton />
+           }
+        </nav>
+        <Switch>
+          <Route exact path="/">
+            <h1>Home</h1>
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
-
-export default App;
+};
+export default withAuth0(App);
