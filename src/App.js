@@ -3,6 +3,7 @@ import './App.css';
 import LoginButton from './LoginButton';
 import { withAuth0 } from '@auth0/auth0-react';
 import LogoutButton from './LogoutButton'
+import Loader from "react-loader-spinner";
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -28,7 +29,13 @@ render() {
           <Link to="/">Home</Link>
           <Link to="/aboutUs">About Us</Link>
           {auth0.isLoading
-          ? <p>spinner</p>
+          ? <Loader
+          type="ThreeDots"
+          color="#00BFFF"
+          height={25}
+          width={25}
+          timeout={3000} //3 secs
+        />
           : auth0.isAuthenticated
            ? (
              <>
@@ -41,7 +48,7 @@ render() {
         </nav>
         <Switch>
           <Route exact path="/">
-            <h1>Home</h1>
+            <h2>Home</h2>
           </Route>
         </Switch>
       </Router>
