@@ -5,6 +5,7 @@ import LogoutButton from './LogoutButton'
 import Loader from "react-loader-spinner";
 import React from 'react';
 import AboutUs from './AboutUs';
+import HaloPlayers from './HaloPlayers';
 
 import {
   BrowserRouter as Router,
@@ -42,17 +43,7 @@ shuffleQuotes = (arr) => {
 
 
 
-componentDidUpdate() {
-  if (!this.state.gamers)
-  this.fetchGamers();
-}
 
-async fetchGamers() {
-  const { auth0 } = this.props;
-  if (!auth0.isAuthenticated) {
-    return;
-  }
-}
 
 
 render() {
@@ -67,6 +58,7 @@ render() {
           <h1>Game Hive</h1>
           <Link to="/">Home</Link>
           <Link to="/aboutUs">About Us</Link>
+          <Link to="/haloPlayers">Halo</Link>
           {auth0.isLoading
           ? <Loader
           type="ThreeDots"
@@ -98,6 +90,9 @@ render() {
           </Route>
           <Route path="/aboutUs">
             <AboutUs/>
+          </Route>
+          <Route path="/haloPlayers">
+            <HaloPlayers />
           </Route>
         </Switch>
       </Router>
