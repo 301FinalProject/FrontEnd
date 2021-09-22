@@ -10,11 +10,35 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import QuoteAndAuthor from './QuoteAndAuthor'
+import quotes from './QuoteDB'
 
 class App extends React.Component {
   state = {
-    gamers: null
+    gamers: null,
+    quote: quotes[0].quote,
+    author: quotes[0].author,
   };
+
+generateRandomQuote = (arr) => {
+  let num = Math.floor(Math.random() * quotes.length)
+
+  let newQuote = quotes[num];
+
+  this.setState({
+    quote: newQuote.quote,
+    author: newQuote.author
+  })
+
+  this.shuffleQuotes(quotes)
+
+}
+
+shuffleQuotes = (arr) => {
+  return arr.sort(function () { return 0.5 - Math.random() });
+}
+
+
 
 componentDidUpdate() {
   if (!this.state.gamers)
@@ -62,6 +86,13 @@ render() {
         <Switch>
           <Route exact path="/">
             <h2>Home</h2>
+            <div className="container">
+        <h1 className="text-center">Random Quote</h1>
+        <QuoteAndAuthor
+          generateRandomQuote={this.generateRandomQuote}
+          quote={this.state}
+        />
+      </div>
           </Route>
         </Switch>
       </Router>

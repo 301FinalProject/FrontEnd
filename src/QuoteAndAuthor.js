@@ -1,5 +1,5 @@
 import React from 'react';
-import quotes from 'QuoteDB';
+import quotes from './QuoteDB';
 
 
 export default function QuoteAndAuthor(props) {
@@ -11,7 +11,7 @@ export default function QuoteAndAuthor(props) {
       <p className="quoteCardText">{quote.quote}</p>
       <h5 className="quoteCardAuthor">- {quote.author}</h5>
       <button
-      onClick={() => { generateRandomeQuote(quotes) }}
+      onClick={() => { generateRandomQuote(quotes) }}
       type="submit">
         <i class="fas fa-mouse"></i> Generate Quote</button>
     </div>
