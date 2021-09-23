@@ -5,7 +5,7 @@ const apiURL = process.env.REACT_APP_API_URL;
 
 
 class HaloPlayers extends React.Component {
-
+    state  = { haloPlayers: [] };
 
 
   componentDidMount() {
@@ -19,15 +19,30 @@ class HaloPlayers extends React.Component {
       }
 
     })
-    console.log('this is the halo player', response);
+    console.log(response);
+    }
+    render() {
+      return(
+        <>
+        {this.state.haloPlayers &&
+        <ul>
+        {this.state.haloPlayers.map(
+          (haloPlayer, index) => (
+            <li key={index}>
+                {haloPlayer.playerName}
+            </li>
+          )
+        )}
+        </ul>
+     
+      }
+      </>
+      )
+      
+    }
+    
   }
-  render() {
-
-    return ('hi');
-  }
-}
-
-
-console.log('these are the halo players', HaloPlayers);
+  console.log(HaloPlayers);
+  
 
 export default HaloPlayers;
