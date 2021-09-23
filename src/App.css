@@ -1,38 +1,42 @@
-.App {
+
+Nav {
+border-bottom: black;
+border-style: solid;
+background-color: rgb(255, 196, 86);
+height:10vh;
+}
+
+.nav-link {
+  color: black;
+  border-color: black;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.nav-link:hover {
+  font-size: 1.5rem;
+}
+
+div .quote {
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 167);
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+}
+
+p {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-image: url("./images/hive.jpg");
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.generate {
+  margin-bottom: 10px;
 }
