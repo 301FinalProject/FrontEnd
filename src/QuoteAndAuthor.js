@@ -10,7 +10,7 @@ export default function QuoteAndAuthor(props) {
     <div className="quoteCard"></div><div className="quoteCardBody">
       <p className="quoteCardText">{quote.quote}</p>
       <h5 className="quoteCardAuthor">- {quote.author}</h5>
-      <button
+      <button className="generate"
       onClick={() => { generateRandomQuote(quotes) }}
       type="submit">
         <i class="fas fa-mouse"></i> Generate Quote</button>
