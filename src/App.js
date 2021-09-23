@@ -81,7 +81,7 @@ class App extends React.Component {
           </Navbar>
           <Switch>
             <Route exact path="/">
-              <h2>Home</h2>
+              <h1>Home</h1>
               <p>This site is designed to help Halo gamers find fellow gamers to play with, or help them train.
               </p>
               <div className="quote">
@@ -93,6 +93,7 @@ class App extends React.Component {
               </div>
             </Route>
             <Route path="/aboutUs">
+            <h1>About Us</h1>
               <AboutUs />
             </Route>
             <Route path="/haloPlayers">
