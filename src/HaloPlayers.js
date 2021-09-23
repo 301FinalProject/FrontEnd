@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { Card, Row, Col, Container } from 'react-bootstrap';
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -25,17 +26,24 @@ class HaloPlayers extends React.Component {
     render() {
       return(
         <>
+        <h1>Halo Leaderboard</h1>
         {this.state.haloPlayers &&
-        <ul>
+        <Container className="AboutUs">
+        <Row>
         {this.state.haloPlayers.map(
           (haloPlayer, index) => (
-            <li key={index}>
-                {haloPlayer.playerName}
-            </li>
+        <Col key={index}>
+        <Card style={{ width: '300px' }} >
+        <Card.Body>
+        <Card.Title>{haloPlayer.playerName}</Card.Title>
+        <Card.Text>Player Rank {haloPlayer.playerRank}</Card.Text>
+        </Card.Body>
+        </Card>
+        </Col>
           )
         )}
-        </ul>
-     
+        </Row>
+      </Container>
       }
       </>
       )
