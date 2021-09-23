@@ -5,22 +5,21 @@ const apiURL = process.env.REACT_APP_API_URL;
 
 
 class HaloPlayers extends React.Component {
-  
-  
-  
-  componentDidUpdate() {
-    if (!this.state.gamers)
+    state  = { haloPlayers: [] };
+
+
+  componentDidMount() {
     this.fetchGamers();
   }
-  
+
   async fetchGamers() {
-    const haloPlayers = await axios.get(`${apiURL}/haloPlayer`, {
+    const response = await axios.get(`${apiURL}/haloPlayer`, {
       params: {
-        
+        id: 'd34730b9-bb48-4569-bcdf-afba9c358019'
       }
-      
+
     })
-    console.log(haloPlayers);
+    console.log(response);
     }
     render() {
       return(
@@ -30,7 +29,7 @@ class HaloPlayers extends React.Component {
         {this.state.haloPlayers.map(
           (haloPlayer, index) => (
             <li key={index}>
-                {haloPlayer}
+                {haloPlayer.playerName}
             </li>
           )
         )}
