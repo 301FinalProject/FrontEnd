@@ -20,6 +20,7 @@ class HaloPlayers extends React.Component {
 
     })
     console.log(response);
+    this.setState({ haloPlayers:response.data })
     }
     render() {
       return(
