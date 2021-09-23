@@ -14,17 +14,36 @@ class HaloPlayers extends React.Component {
   }
   
   async fetchGamers() {
-    const haloPlayer = await axios.get(`${apiURL}/haloPlayer`, {
+    const haloPlayers = await axios.get(`${apiURL}/haloPlayer`, {
       params: {
-
+        
       }
       
     })
-    console.log(haloPlayer);
+    console.log(haloPlayers);
     }
+    render() {
+      return(
+        <>
+        {this.state.haloPlayers &&
+        <ul>
+        {this.state.haloPlayers.map(
+          (haloPlayer, index) => (
+            <li key={index}>
+                {haloPlayer}
+            </li>
+          )
+        )}
+        </ul>
+     
+      }
+      </>
+      )
+      
+    }
+    
   }
-
-
   console.log(HaloPlayers);
+  
 
 export default HaloPlayers;
