@@ -28,7 +28,7 @@ class HaloPlayers extends React.Component {
         <>
         <h1>Halo Leaderboard</h1>
         {this.state.haloPlayers &&
-        <Container className="AboutUs">
+        <Container className="playerCards">
         <Row>
         {this.state.haloPlayers.map(
           (haloPlayer, index) => (
@@ -36,7 +36,7 @@ class HaloPlayers extends React.Component {
         <Card style={{ width: '300px' }} >
         <Card.Body>
         <Card.Title>{haloPlayer.playerName}</Card.Title>
-        <Card.Text>Player Rank {haloPlayer.playerRank}</Card.Text>
+        <Card.Text>Rank #{haloPlayer.playerRank}</Card.Text>
         </Card.Body>
         </Card>
         </Col>
