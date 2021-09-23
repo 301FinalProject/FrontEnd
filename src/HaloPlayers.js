@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import { Card, Row, Col, Container } from 'react-bootstrap';
+import { Card, Row, Col, Container, Button } from 'react-bootstrap';
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -23,6 +23,10 @@ class HaloPlayers extends React.Component {
     console.log(response);
     this.setState({ haloPlayers:response.data })
     }
+
+  handleClick = async(haloPlayer) => {
+    await axios.post(`${apiURL}/player`, haloPlayer)
+  }
     render() {
       return(
         <>
@@ -37,6 +41,7 @@ class HaloPlayers extends React.Component {
         <Card.Body>
         <Card.Title>{haloPlayer.playerName}</Card.Title>
         <Card.Text>Rank #{haloPlayer.playerRank}</Card.Text>
+        <Button onClick= {() => this.handleClick(haloPlayer)}>Save Player</Button>
         </Card.Body>
         </Card>
         </Col>

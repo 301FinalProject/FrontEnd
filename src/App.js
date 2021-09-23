@@ -6,6 +6,7 @@ import Loader from "react-loader-spinner";
 import React from 'react';
 import AboutUs from './AboutUs';
 import HaloPlayers from './HaloPlayers';
+import SavePlayers from './SavePlayers';
 import { Navbar, Nav } from 'react-bootstrap';
 
 import {
@@ -61,6 +62,7 @@ class App extends React.Component {
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/aboutUs">About Us</Nav.Link>
             <Nav.Link as={Link} to="/haloPlayers">Halo</Nav.Link>
+            <Nav.Link as={Link} to="/savedPlayers">Saved Players</Nav.Link>
             {auth0.isLoading
               ? <Loader
                 type="ThreeDots"
@@ -98,6 +100,9 @@ class App extends React.Component {
             </Route>
             <Route path="/haloPlayers">
               <HaloPlayers />
+            </Route>
+            <Route path="/savedPlayers">
+              <SavePlayers/>
             </Route>
           </Switch>
         </Router>
