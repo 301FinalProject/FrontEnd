@@ -44,3 +44,12 @@ body {
 h1 {
   text-align: center;
 }
+
+.playerCards .card {
+  margin: 10px;
+  background-color: rgb(255, 255, 167);
+}
+
+.card-title {
+  text-align: center;
+}
