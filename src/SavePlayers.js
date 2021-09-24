@@ -1,21 +1,34 @@
 import axios from 'axios';
 import React from 'react';
-import { Card, Row, Col, Container, Button } from 'react-bootstrap';
+import { Card, Row, Col, Container } from 'react-bootstrap';
 
 
 const apiURL = process.env.REACT_APP_API_URL;
 
 class SavePlayers extends React.Component {
 state = {
-  haloPlayers: [
-    {playerName:'Jaren', playerRank:'1'},
-    {playerName:'Joey', playerRank:'-1'},
-    {playerName:'Yvette', playerRank:'1'}
-  ]
+  haloPlayers: []
 };
+
+componentDidMount() {
+  this.fetchGamers();
+}
+async fetchGamers() {
+  
+  try {
+    const response = await axios.get(`${apiURL}/haloSavedPlayer`);
+    console.log('this is response', response);
+    this.setState({ haloPlayers:response.data })
+  }
+  catch (err) {
+    console.log(err);
+  }
+}
+
   render() {
     return(
       <>
+      <h1>Your Saved Players</h1>
       {this.state.haloPlayers &&
       <Container className="playerCards">
       <Row>

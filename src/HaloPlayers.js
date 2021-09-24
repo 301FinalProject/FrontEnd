@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { Card, Row, Col, Container, Button } from 'react-bootstrap';
+import { withRouter } from 'react-router-dom';
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -26,8 +27,10 @@ class HaloPlayers extends React.Component {
 
   handleClick = async(haloPlayer) => {
     await axios.post(`${apiURL}/player`, haloPlayer)
+    this.props.history.push('/savedPlayers');
   }
     render() {
+      console.log(this.props);
       return(
         <>
         <h1>Halo Leaderboard</h1>
@@ -59,4 +62,4 @@ class HaloPlayers extends React.Component {
   console.log(HaloPlayers);
   
 
-export default HaloPlayers;
+export default withRouter(HaloPlayers);
