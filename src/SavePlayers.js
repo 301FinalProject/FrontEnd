@@ -1,9 +1,8 @@
-import axios from 'axios';
 import React from 'react';
-import { Card, Row, Col, Container, Button } from 'react-bootstrap';
+import { Card, Row, Col, Container } from 'react-bootstrap';
 
 
-const apiURL = process.env.REACT_APP_API_URL;
+
 
 class SavePlayers extends React.Component {
 state = {
