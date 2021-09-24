@@ -9,6 +9,7 @@ import HaloPlayers from './HaloPlayers';
 import SavePlayers from './SavePlayers';
 import { Navbar, Nav } from 'react-bootstrap';
 import ghlogo from './images/ghlogo.png';
+import honeyheader from './images/honeyheader.png'
 
 import {
   BrowserRouter as Router,
@@ -84,6 +85,7 @@ class App extends React.Component {
                 : <LoginButton />
             }
           </Navbar>
+          <img class="headerimg" src={honeyheader} alt="honeyheader" />
           <Switch>
             <Route exact path="/">
               <h1>Home</h1>
