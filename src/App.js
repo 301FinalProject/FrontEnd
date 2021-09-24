@@ -8,6 +8,8 @@ import AboutUs from './AboutUs';
 import HaloPlayers from './HaloPlayers';
 import SavePlayers from './SavePlayers';
 import { Navbar, Nav } from 'react-bootstrap';
+import ghlogo from './images/ghlogo.png';
+import honeyheader from './images/honeyheader.png'
 
 import {
   BrowserRouter as Router,
@@ -58,7 +60,9 @@ class App extends React.Component {
       <>
         <Router>
           <Navbar>
-            <Navbar.Brand>Game Hive</Navbar.Brand>
+            <Navbar.Brand>
+              <img src={ghlogo} style={{width:100}} alt="ghlogo"/>
+            </Navbar.Brand>
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/aboutUs">About Us</Nav.Link>
             <Nav.Link as={Link} to="/haloPlayers">Halo</Nav.Link>
@@ -81,10 +85,11 @@ class App extends React.Component {
                 : <LoginButton />
             }
           </Navbar>
+          <img class="headerimg" src={honeyheader} alt="honeyheader" />
           <Switch>
             <Route exact path="/">
               <h1>Home</h1>
-              <p>This site is designed to help Halo gamers find fellow gamers to play with, or help them train.
+              <p>This site was made so that people interested in competitive gaming can see how their favorite players are doing in the competitions. As well as look for more players to be interested in and save their favorite players.
               </p>
               <div className="quote">
                 <h1 className="text-center">Random Quote</h1>
@@ -93,6 +98,7 @@ class App extends React.Component {
                   quote={this.state}
                 />
               </div>
+              <img className="hplogo" src={ghlogo} style={{width:500}} alt="ghlogo"/>
             </Route>
             <Route path="/aboutUs">
             <h1>About Us</h1>

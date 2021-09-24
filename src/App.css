@@ -4,6 +4,9 @@ border-bottom: black;
 border-style: solid;
 background-color: rgb(255, 196, 86);
 height:10vh;
+margin-left:15px;
+margin-right:15px;
+margin-top:15px;
 }
 
 .nav-link {
@@ -30,6 +33,9 @@ div .quote {
 
 p {
   text-align: center;
+  width: 80%;
+  margin:0 auto;
+  padding-bottom: 15px;
 }
 
 body {
@@ -52,4 +58,19 @@ h1 {
 
 .card-title {
   text-align: center;
+}
+
+.hplogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.headerimg {
+  height: 40px;
+  width: 1235px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
